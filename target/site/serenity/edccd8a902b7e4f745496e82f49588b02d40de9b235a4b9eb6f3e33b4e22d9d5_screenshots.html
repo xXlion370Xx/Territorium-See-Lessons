@@ -1,0 +1,230 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Screenshots</title>
+
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<link rel="apple-touch-icon" sizes="57x57" href="apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+<!--[if IE 7]>
+<!--<link rel="stylesheet" href="font-awesome/css/font-awesome-ie7.min.css">-->
+
+<link rel="stylesheet" type="text/css" href="fontawesome-free-5.7.2-web/css/all.min.css">
+<link rel="stylesheet" type="text/css" href="fontawesome-free-5.7.2-web/css/v4-shims.min.css">
+
+<!-- JQuery -->
+<script type="text/javascript" src="scripts/jquery-1.11.1.min.js"></script><link rel="stylesheet" type="text/css" href="chartist/chartist-plugin-tooltip/dist/chartist-plugin-tooltip.min.css">
+<link rel="stylesheet" type="text/css" href="chartist/dist/chartist.min.css">
+<script src="chartist/dist/chartist.min.js"></script>
+<script src="chartist/chartist-plugin-tooltip/dist/chartist-plugin-tooltip.min.js"></script>
+<!-- Required Stylesheets -->
+<link href="bootstrap-treeview/dist/bootstrap-treeview.min.css" rel="stylesheet">
+
+<!-- Required Javascript -->
+<script src="bootstrap-treeview/dist/bootstrap-treeview.min.js"></script><!-- DataTables -->
+<link type="text/css" href="datatables/1.10.19/datatables.min.css" rel="stylesheet" />
+<script type="text/javascript" src="datatables/1.10.19/datatables.min.js"></script>
+
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<script src="bootstrap/js/bootstrap.min.js"></script>
+
+<script type="text/javascript" src="datatables/1.10.19/datatables.bootstrap4.min.js"></script>
+<link type="text/css" href="datatables/1.10.19/datatables.bootstrap4.min.css" rel="stylesheet" />
+<link rel="stylesheet" href="css/core.css"/>
+<link rel="stylesheet" href="css/link.css"/>
+<link type="text/css" media="screen" href="css/screen.css" rel="Stylesheet"/><!-- Nivo Slider -->
+<link rel="stylesheet" href="nivo-slider/3.2/nivo-slider.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="nivo-slider/3.2/themes/default/default.css" type="text/css" media="screen" />
+<script src="nivo-slider/3.2/jquery.nivo.slider.pack.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+
+        function getUrlVars() {
+            var vars = {};
+            var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function (m, key, value) {
+                vars[key] = value;
+            });
+            return vars;
+        }
+
+        var screenshotIndex = getUrlVars()["screenshot"];
+
+        $(window).load(function () {
+            $('#slider').nivoSlider({
+                startSlide: screenshotIndex,
+                effect: 'fade',
+                animSpeed: 200,
+                manualAdvance: true
+            });
+        });
+
+        $(window).keydown(function(e) {
+            switch(e.which) {
+                case 37:
+                    $('a.nivo-prevNav').click();
+                    break;
+                case 39:
+                    $('a.nivo-nextNav').click();
+                    break;
+            }
+        });
+    </script>
+
+</head>
+
+<body>
+<div id="topheader">
+    <div id="topbanner">
+        <div id="logo"><a href="index.html"><img src="images/serenity-logo.png" border="0"/></a></div>
+        <div id="projectname-banner" style="float:right">
+            <span class="projectname">
+                <span class="projecttitle"></span>
+                <span class="projectsubtitle"></span>
+            </span>
+        </div>
+    </div>
+</div>
+
+<div class="middlecontent">
+    <div id="contenttop">
+        <div class="middlebg">
+            <span class="breadcrumbs">
+                <a href="index.html">Home</a>
+                > <span class="truncate-40"><a
+                    href="2d4c9cda7c80242e6f96dafadd15f80eda83bfc7ea70f807f6d4f206af232d8a.html">Consult Lessons Feature</a></span>
+                > <span class="truncate-60"><a
+                    href="edccd8a902b7e4f745496e82f49588b02d40de9b235a4b9eb6f3e33b4e22d9d5.html">See lessons </a></span>
+                > Screenshots
+            </span>
+        </div>
+        <div class="rightbg"></div>
+    </div>
+
+    <div class="clr"></div>
+
+    <!--/* starts second table*/-->
+<div>
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#"><i class="fa fa-check-square-o"></i> Overall Test Results</a>
+        </li>
+        <li >
+            <a href="capabilities.html"><i class="fa fa-book"></i> Requirements</a>
+        </li>
+        <li >
+            <a href="576946480b52ad056d6f5bddf874399c83582ecf90963cc074a14c70580e7d9f.html"><i class="fa fa-comments-o"></i> Features</a>
+        </li>
+    </ul>
+    <span class="date-and-time"><a href="build-info.html"><i class="fa fa-info-circle"></i></a> Report generated 27-08-2022 21:51</span>
+    <br style="clear:left"/>
+</div>
+
+    <div class="clr"></div>
+
+
+    <div id="contentbody">
+        <div class="titlebar">
+            <div class="story-title">
+                <table class="outcome-header">
+                    <tr>
+                        <td>
+                            <div>
+                                <h3 class="discreet-story-header">
+                                    <i class="fa fa-2x fa-comments-o"></i>
+                                    <span class="story-header-title">Consult Lessons Feature </span>
+                                    <span class="badge tag-badge" style="">Feature</span>
+                                </h3>
+
+                                <div class="discreet-requirement-narrative-title">
+                                As a any person, an student could forget his credentials platform
+                                </div>
+                            </div>
+
+                        </td>
+                        <td valign="top" align="right">
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="story-title">
+                <table class="outcome-header">
+                    <tr>
+                        <td colspan="2" class="test-title-bar">
+                            <span class="outcome-icon"><a href='##beforetable'><i class='fa fa-check-circle-o success-icon fa-2x' title='SUCCESS'></i></a></span>
+                            <span class="test-case-title">
+                                <span class="success-color">See lessons
+                                    <span class="related-issue-title"></span>
+                                </span>
+                            </span>
+
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="clr"></div>
+
+
+    <div id="beforetable"></div>
+    <div id="contenttilttle">
+        <div class="slider-wrapper theme-default">
+            <div id="slider">
+                <img src="02922b02fa5f826a7f188c2b14746a88769b714827d72bb249c3a71fb3bf0097.png" title=" Given The student is on the page territorium" width="1366"/>
+                <img src="02922b02fa5f826a7f188c2b14746a88769b714827d72bb249c3a71fb3bf0097.png" title=" Daniel opens the https://sena.territorio.la/index.php?login=true" width="1366"/>
+                <img src="02922b02fa5f826a7f188c2b14746a88769b714827d72bb249c3a71fb3bf0097.png" title=" Given The student is on the page territorium (completed)" width="1366"/>
+                <img src="8f056f8b969cb6d6e9f28dfe8916d47fb6fb3194500a9cda5abdfd6ff00eac69.png" title=" When The student enter his credential
+| Type document | Number document | password |
+| TI | 1031803334 | Dscr2005daniel51835436* |" width="1366"/>
+                <img src="8f056f8b969cb6d6e9f28dfe8916d47fb6fb3194500a9cda5abdfd6ff00eac69.png" title=" Daniel login" width="1366"/>
+                <img src="8f056f8b969cb6d6e9f28dfe8916d47fb6fb3194500a9cda5abdfd6ff00eac69.png" title=" Daniel selects TI in select type document" width="1366"/>
+                <img src="8f056f8b969cb6d6e9f28dfe8916d47fb6fb3194500a9cda5abdfd6ff00eac69.png" title=" Daniel enters '1031803334' into enter document number" width="1366"/>
+                <img src="e75e85af1ab27c6e8bae46e3148da653146e7a5908c76bc806ad5ddeb818aaa1.png" title=" Daniel enters '1031803334' into enter document number (completed)" width="1366"/>
+                <img src="e75e85af1ab27c6e8bae46e3148da653146e7a5908c76bc806ad5ddeb818aaa1.png" title=" Daniel enters 'Dscr2005daniel51835436*' into enter password" width="1366"/>
+                <img src="fc9f9874fad36ab8a568c5ff25b57bf91ec0b1e3d52f7ff2bf7780f220d19e80.png" title=" Daniel enters 'Dscr2005daniel51835436*' into enter password (completed)" width="1366"/>
+                <img src="fc9f9874fad36ab8a568c5ff25b57bf91ec0b1e3d52f7ff2bf7780f220d19e80.png" title=" Daniel clicks on click the button" width="1366"/>
+                <img src="ddeb1eceaab69030394c91d9577cad1f83f61cd0336d8871274418a6e916699d.png" title=" Daniel clicks on click the button (completed)" width="1366"/>
+                <img src="ddeb1eceaab69030394c91d9577cad1f83f61cd0336d8871274418a6e916699d.png" title=" Daniel login (completed)" width="1366"/>
+                <img src="ddeb1eceaab69030394c91d9577cad1f83f61cd0336d8871274418a6e916699d.png" title=" When The student enter his credential
+| Type document | Number document | password |
+| TI | 1031803334 | Dscr2005daniel51835436* | (completed)" width="1366"/>
+                <img src="dee4c63d54e8c639900e0c3120e02880d1c5e0a3f2ef7e9438b68370112accbe.png" title=" Then The student can to see his lessons" width="1366"/>
+                <img src="dee4c63d54e8c639900e0c3120e02880d1c5e0a3f2ef7e9438b68370112accbe.png" title=" Daniel home" width="1366"/>
+                <img src="dee4c63d54e8c639900e0c3120e02880d1c5e0a3f2ef7e9438b68370112accbe.png" title=" Daniel clicks on Button profile" width="1366"/>
+                <img src="f8edcd4dfe5e44e239cfe07824562c39d07ffb2ca681ad3f85b2c86f4d5426b4.png" title=" Daniel clicks on Button profile (completed)" width="1366"/>
+                <img src="f8edcd4dfe5e44e239cfe07824562c39d07ffb2ca681ad3f85b2c86f4d5426b4.png" title=" Daniel clicks on Lessons profile" width="1366"/>
+                <img src="b8aa79edf8063d09899a16bf701fb21df8f4262315b9112b1fc47a479172ee7e.png" title=" Daniel clicks on Lessons profile (completed)" width="1366"/>
+                <img src="b8aa79edf8063d09899a16bf701fb21df8f4262315b9112b1fc47a479172ee7e.png" title=" Daniel home (completed)" width="1366"/>
+                <img src="b8aa79edf8063d09899a16bf701fb21df8f4262315b9112b1fc47a479172ee7e.png" title=" Then compare result should be 'Cursos'" width="1366"/>
+                <img src="b8aa79edf8063d09899a16bf701fb21df8f4262315b9112b1fc47a479172ee7e.png" title=" Then compare result should be 'Cursos' (completed)" width="1366"/>
+                <img src="b8aa79edf8063d09899a16bf701fb21df8f4262315b9112b1fc47a479172ee7e.png" title=" Then The student can to see his lessons (completed): <span class='success-color'>SUCCESS</span>" width="1366"/>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+<div id="beforefooter"></div>
+<div id="bottomfooter">
+    <span class="version">Serenity BDD version 2.0.81</span>
+</div>
+</body>
+</html>

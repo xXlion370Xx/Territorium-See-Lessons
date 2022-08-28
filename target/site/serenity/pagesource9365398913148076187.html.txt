@@ -1,0 +1,756 @@
+<html><head>
+  <meta name="google" content="notranslate">
+  <meta charset="utf-8">
+  <title>Territorium || Bienvenidos</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link href="/css/flexbox.css" rel="stylesheet">
+  <link href="../new_design/bootstrap/css/bootstrap.php" rel="stylesheet">
+  <link href="/css/css-default.css" rel="stylesheet">
+
+  <link href="/login/css/css.css?family=PT+Sans" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="../css/font-awesome.css">
+  <link rel="stylesheet" href="../css/jquery.toast.css">
+  <script src="/login/js/jquery.min.js"></script>
+
+  <script src="../style_bci/login/bootstrap.min.js"></script>
+  <script type="text/javascript" src="../js/jquery.toast.js"></script>
+  <script src="../new_design/bootstrap/js/bootstrap-modal.js"></script>
+  <script src="../new_design/bootstrap/js/bootstrap-modalmanager.js"></script>
+  <script src="/login/js/platform.js" async="" defer=""></script>
+
+
+  <!-- msal.js with a fallback to backup CDN -->
+  <script type="text/javascript" src="/login/js/msal.js"></script>
+  <!--
+  
+  <script type="text/javascript">
+      if (typeof Msal === 'undefined') document.write(unescape("%3Cscript src='https://alcdn.msftauth.net/lib/1.2.1/js/msal.js' type='text/javascript' integrity='sha384-m/3NDUcz4krpIIiHgpeO0O8uxSghb+lfBTngquAo2Zuy2fEF+YgFeP08PWFo5FiJ' crossorigin='anonymous'%3E%3C/script%3E"));
+  </script>
+-->
+
+
+  <style type="text/css">
+
+    .login {
+      background: #ff8138;
+      border: 1px solid #ff8138;
+      width: auto;
+      font-size: 14px;
+      border-radius: 5px;
+      color: #FFFFFF;
+      cursor: pointer;
+      float: right;
+      height: 32px;
+      font-family: Helvetica;
+      font-weight: 200;
+    }
+
+    .loginInput {
+      font-size: 14px !important;
+    }
+
+    .login:hover {
+        opacity: 0.8;
+    }
+
+    #logo{
+      background-image: url('https://archivos.territorio.la/archivos/clases/1045pxnSenanColombianlogonsvgnnn825f343e0c268bannn___795ff91afcb9ca2___.png');
+      float: none;
+    }
+
+    footer a {
+      width: 160px;
+      padding: 0 2rem;
+    }
+
+    footer a img{
+      width: 100%;
+    }
+
+    footer span {
+      float: none;
+      line-height: inherit;
+      margin-right: 0;
+      height: auto;
+      font-size: 14px;
+      padding: 0 1em;
+    }
+
+    .inner-mid {
+      height: 100%;
+      width: 100%;
+      background-color: #f3f3f3;
+      background: url('https://archivos.territorio.la/archivos/clases/2020n08n18n11n37n26nWindow___645f3c05ba7afe2___.png') 100% no-repeat;
+      background-position: center top !important;
+      background-size: cover;
+    }
+
+    #containerPreloadLMS {
+      display: none;
+    }
+
+    .background-sena {
+      height: 100%;
+    }
+
+    .josso_container input[type="text"], input[type="password"] {
+       height: auto;
+    }
+
+    #modalLogin {
+      width: 300px !important; 
+      margin-top: -150px !important;
+      margin-right: 0px !important;
+      margin-bottom: 0px !important;
+      margin-left: -150px !important;
+    }
+
+    #modalLogin form, #gwLogin {
+      float: none;
+      margin: 0;
+      margin-top: 0px;
+      margin-top: 0;
+      max-height: none;
+      width: 100%;
+    }
+
+    /* Iniciar Sesión */
+
+    .container-config {
+      position: fixed;
+      right: -12.5rem;
+      top: 50%;
+      -webkit-transition: all .5s linear;
+      -moz-transition: all .5s linear;
+      transition: all .5s linear;
+    }
+
+    .container-config.active {
+      right: 0;
+    }
+
+    .btn-config {
+      position: absolute;
+      top: 2rem;
+      left: -2rem;
+      width: 2rem;
+      height: 2rem;
+      background: #fff;
+      text-align: center;
+      border-radius: .2rem 0 0 .2rem;
+      font-size: 1rem;
+      -webkit-box-shadow: -.5rem .1rem 1rem 0 rgba(0,0,0,.1);
+      box-shadow: -.5rem .1rem 1rem 0 rgba(0,0,0,.1);
+      text-decoration: none;
+    }
+
+    .btn-config i {
+      line-height: 2rem;
+      font-size: 1rem;
+      color: #ff8138;
+    }
+
+    .content-config {
+      padding: .1rem 0;
+      background: #fff;
+      border-radius: .4rem 0 0 .4rem;
+      -webkit-box-shadow: 0 .1rem 2rem 0 rgba(0,0,0,.1);
+      box-shadow: 0 .1rem 2rem 0 rgba(0,0,0,.1);
+      width: 12.5rem;
+      z-index: 10;
+    }
+
+    .description-config {
+      border-top: 1px solid #EEE;
+      border-bottom: 1px solid #EEE;
+    }
+
+    .description-config p{
+      font-size: .8rem;
+      margin: 0;
+    }
+
+    #formularioLogin .error{
+      display: none;
+    }   
+
+    #formularioLogin .display-error{
+      color: red;
+      font-size: .8rem;
+      margin-left: 1rem;
+    }
+
+    #formularioLogin input.invalido{
+      border: 2px solid red !important;
+      box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0);
+    }
+
+    #formularioLogin input.valido{
+      border: 2px solid green !important;
+      box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0);
+    }
+
+    /* Estilos josso */
+
+    .ingreso_sofiaplus {
+      background-color: white !important;
+      border: 1px solid transparent !important;
+      border-top-width: 3px; 
+      border-color: #cfdbe2;
+      -webkit-box-shadow: -.5rem .1rem 1rem 0 rgba(0,0,0,.1);
+      box-shadow: -.5rem .1rem 1rem 0 rgba(0,0,0,.1);
+    }
+
+    .ingreso_sofiaplus tr:first-child {
+      background-color: #690 !important;
+      border: 1px solid #690 !important;
+    }
+
+    .ingreso_sofiaplus tr:first-child td h2 {
+      color: white !important;
+    }
+
+    .ingreso_sofiaplus .subinstruccionesgrandes {
+      color: #eee !important;
+    }
+
+    .ingreso_sofiaplus .texto_input {
+        display: inline-block;
+        padding: .5rem;
+    }
+
+    .josso_container input[type="text"], input[type="password"] {
+      display: block;
+      padding: .5rem .8rem;
+      font-size: .8rem;
+      font-weight: 400;
+      line-height: 1.5;
+      background-color: #fff;
+      border: 1px solid #c5c5c5;
+      border-radius: .2rem;
+    }
+
+    .josso_container input[type="button"] {
+      width: 210px !important;
+      border: 1px solid transparent !important;
+      border-radius: .2rem;
+      margin-bottom: 1rem;
+    }
+
+    .josso_container .select_blanco {
+      border: 1px solid #c5c5c5;
+      border-radius: .2rem;
+      width: 202px;
+    }
+    /*----------------*/
+
+    @media (max-width: 37.5rem) {
+      .inner-mid {
+        -ms-flex-wrap: wrap !important;
+        flex-wrap: wrap !important;
+      }
+      .josso_container {
+        width: 100%;
+      }
+
+    }
+
+    @media (max-width: 400px) {
+      .inner-top {
+        flex-direction: column;
+      }
+
+      .inner-top {
+        align-items: center;
+      }
+
+      .container-btn-login {
+          margin-left: auto;
+          padding: .5em;
+      }
+
+      header {
+       
+
+        height: 12%;
+      }
+      footer {
+        height: 10%;
+      }
+
+      .jq-toast-wrap {
+        width: auto !important;
+      }
+    }
+
+    .news_img{
+      margin:0 20 0 20;
+      
+    }
+    .trailer_button{
+        z-index:999;
+        
+        margin:1 20 -20 20;
+        width:181px;
+        border-radius:10px;
+    }
+    .buttonimg{
+        width:auto;
+        height:auto;
+    }
+
+  </style>
+</head>
+
+  <body><header style="background-color: #ffffff;">
+    <div class="inner-top d-flex justify-content-between">
+      <a href="index.php" id="logo" title="Logo Sena"></a>
+    
+    <div class="buttonimg">
+    <div class="news_img"><input type="image" style="height:60%; margin-top:10%; " name="imgbtn" src="../JavaScriptSPA/login-via-microsoft_link.png" onclick="signIn()" alt="Tool Tip"></div>
+      <button id="signOutMicrosoft" class="btn trailer_button" onclick="signOut()" style="display: none;"><i class="fa fa-sign-out"><span class="tooltiptext">Cerrar Sesión</span></i></button>
+     </div>
+    
+    </div> 
+
+    <div>
+    
+    <div>
+  </div></div></header>
+
+  <div class="container-config">
+    <a href="#" class="btn-config" title="Botón de configuración">
+      <i class="fa fa-cog"></i>
+    </a>
+    <div class="content-config">
+      <div class="d-flex flex-column">
+        <h4 class="p-3 text-center">Iniciar sesión en LMS</h4>
+        <div class="description-config d-flex">
+          <p class="p-3">
+            Ingreso para roles administrador del sistema y apoyos a la formación virtual.
+          </p>
+        </div>
+      </div>
+      <div class="d-flex">
+        <div class="d-flex justify-content-center w-100 p-2">
+          <button aria-label="Abrir ventana emergente con el inicio de sesión" class="login" type="button" onclick="modalLogin();">Iniciar Sesión</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div style="background-color: #ff8138; height: 2%;"></div>
+
+  <div id="content" style="background-color: white;">
+    <div class="inner-mid d-flex align-items-center justify-content-center" alt="">
+      <div class="josso_container d-flex justify-content-center" id="josso_container">
+       
+      <div id="container-inside-josso">
+            
+            
+            
+            <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+            <title>SOFIA Plus</title>
+            <style>
+             .ingreso_sofiaplus{background-color:#eee;border:1px solid #ddd;border-radius:8px 8px 8px 8px}h2{color:#333;font-size:1.2em;font-weight:bolder;margin-bottom:0;padding-bottom:0;display:inline}select{border:medium none!important;height:25px;margin-top:7px;width:190px;font-size:12px}.select_blanco{background-color:#fff;border:1px solid #ccc;border-radius:6px 6px 6px 6px;display:inline-block;padding:0 4px 12px}.select_blanco,.select_blanco_error,.select_blanco_obligatorio,.select_blanco_ok{height:25px;margin-top:7px;width:190px}.input_blanco_obligatorio{background-position:172px 7px}.input_blanco,.input_blanco_error,.input_blanco_obligatorio,.input_blanco_ok{background-repeat:no-repeat;border:1px solid #ccc;border-radius:6px 6px 6px 6px;color:#222;font-family:'Helvetica Neue',sans-serif;font-size:13px;margin-top:6px;padding:8px 40px 8px 10px;position:relative;width:150px}.subinstruccionesgrandes{color:#999;display:inline;font-size:.6em;margin-bottom:12px}.boton_verde,.boton_verde_oscuro{border:1px solid #093}.boton_gris,.boton_verde,.boton_verde_oscuro{border-radius:6px 6px 6px 6px;cursor:pointer;font-family:'Helvetica Neue',Helvetica,Arial,'Lucida Grande',sans-serif;font-size:14px;font-weight:700;line-height:17px;padding:8px;text-align:center;text-decoration:none;width:200px}.boton_verde{background:none repeat scroll 0 0 #690;border:1px solid #29691d!important;color:#fff!important;transition:border .2s ease 0s}.texto_input{font-size:.8em}.texto_input{display:inline-table;padding-right:10px;width:210px}.enlace{text-align:center;font-size:12px}.verde{text-decoration:none}a:link{color:#369;font-size:12px}.verde{color:#369!important;font-size:12px;font-weight:600}body{font-family:Arial,Helvetica,sans-serif}.verde_real{color:grey!important;font-size:14px;font-weight:600}body{font-family:Arial,Helvetica,sans-serif}    
+             
+             </style>
+            <noscript>
+              <META HTTP-EQUIV='Refresh'  CONTENT='0;URL=http://auth.senasofiaplus.edu.co:18080/josso/signon/sofia-index/staticContent/html/error/jsDisabled.html'>
+            </noscript>
+
+            <script language="javascript">
+
+
+
+
+            function validar(e) {
+              tecla = (document.all) ? e.keyCode : e.which;
+              if (tecla==13) {
+              concatenarValores();
+              }
+            }
+            
+            function validarSoloNumeros() {
+
+            var numeros='0123456789';
+            texto = document.getElementById('document').value;           
+            for(i=0; i<texto.length; i++){
+                if (numeros.indexOf(texto.charAt(i),0)!=-1){
+                }else{
+                    document.getElementById('document').value='';
+                    alert('El campo número de documento solo permite números, por favor intente de nuevo');
+                    return false;
+                  }   
+                
+             }
+            
+            }
+
+            function cambioEstadoEnviando(){
+              var message='En Proceso de Autenticación por favor espere..';
+              console.log('Cambiando disponibilidad '+message);
+              $('#mensajes').html(message);
+              $('#ingresar').hide();
+              $('#typeDocument').attr('readonly', 'readonly');
+              $('#document').attr('readonly', 'readonly');
+              $('#passwd').attr('readonly', 'readonly');
+              $('#exception_message').hide();              
+            }
+            
+            function cambioEstadoRecibido(){
+              
+              $('#mensajes').html('');
+              $('#ingresar').attr('disabled', false);
+              
+            }
+            
+
+            function concatenarValores( formulario){
+
+            validarSoloNumeros();
+            
+            var tipoID = $('#typeDocument').val();
+                    var numero = $('#document').val(); 
+              
+              var branch = $('#branch').val();
+              if(tipoID=='NIT' && branch==''){
+                var campo=  tipoID+ ','+numero;
+              }
+              else{
+                var campo=  tipoID+ ','+numero;
+              } 
+
+            
+            
+            
+               $.ajax({
+                url: '//sena.territorio.la/integraciones/../integraciones/josso//gwLogin',
+               
+                type : 'post',
+                async : true,
+                data: $('#gwLogin').serialize(),
+                success: function(data){
+                    $('#container-inside-josso').html(data);
+                     cambioEstadoRecibido();
+                   
+                    }
+                
+                })
+              
+            }
+
+
+            function hideShowCtrl() {
+              var elementSelect = document.getElementById('typeDocument');
+                element = document.getElementById('sucursalDiv');
+                if(elementSelect.value!='NIT'){
+                  element.style.display  = 'none';
+                }
+                else{
+                  element.style.display  = 'inline';
+                }   
+            }
+
+            function pasarAMayusculas(o){
+              o.value=o.value.toUpperCase();
+            }
+
+                </script>
+
+
+            
+            
+
+
+              <form method="post" action="//sena.territorio.la/integraciones/../integraciones/josso//gwLogin" enctype="multipart/form-data" name="gwLogin" id="gwLogin">
+                <input type="hidden" name="action" value="login">
+                <input type="hidden" name="username" id="username" value="">
+                
+                <table height="350" border="0" id="marcoingreso" class="ingreso_sofiaplus">
+                  <tbody><tr>
+                    <td align="center" valign="top">
+                      <h2 tabindex="0">
+                        Ingreso <span class="subinstruccionesgrandes">Usuarios
+                          registrados</span>
+                      </h2>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td align="center" valign="top"><span tabindex="0" class="texto_input">Tipo
+                        de documento de identidad</span></td>
+                  </tr>
+                  <tr>
+                    <td height="24" align="center" valign="top">
+                      <div class="select_blanco">
+
+                        <select styleid="typeDocument" name="typeDocument" id="typeDocument" size="1">
+                         <option value="CC">Cédula de Ciudadanía</option><option value="TI">Tarjeta de Identidad</option><option value="CE">Cédula de Extranjería</option><option value="NCS">Número ciego SENA</option><option value="PS">Pasaporte</option><option value="DNI">Documento Nacional de Identificaciónasaporte</option><option value="NIT">Número de Identificación Tributaria</option><option value="PR">PEP - RAMV</option><option value="PEP">PEP</option>
+                        </select>
+                      </div>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td style="padding-left: 30px" valign="top"> 
+                    <span tabindex="0" class="texto_input">Número de documento:</span>
+                      </td>
+                  </tr>
+                  <tr>
+                    <td align="center" valign="top">
+                    
+                    <input tabindex="0" placeholder="Ingrese número de documento" type="text" name="document" id="document" styleclass="input_blanco_obligatorio" styleid="document" maxlength="20" size="28"></td>
+                  </tr>
+                  <tr>
+                    <td style="padding-left: 30px" valign="top">
+                    <span tabindex="0" class="texto_input">Contraseña:</span>
+                    </td>
+                  </tr>
+
+                  <tr>
+
+                    <td valign="top" align="center"><label> 
+                    <input tabindex="0" placeholder="Ingrese contraseña" type="password" name="password" id="passwd" styleclass="input_blanco_obligatorio" size="28" value="" onkeypress="validar(event)">
+                    </label>
+                    </td>
+                  </tr>
+
+                  <tr id="sucursalDiv" style="display: none">
+                    <td align="center" valign="top" style="padding-left: 4px;"><span style="margin-left: -95px;" class="texto_input">Sucursal:</span><br>
+                      <label> <input type="text" name="loginGatewayForm" id="branch" styleclass="input_blanco_obligatorio" size="28" onkeydown="pasarAMayusculas(this)" onkeyup="pasarAMayusculas(this)" onblur="pasarAMayusculas(this)" onclick="pasarAMayusculas(this)" style="margin-left: 18px;">
+                    </label></td>
+                  </tr>
+                
+                  <tr>
+                    <td align="center" valign="top">
+                    
+                    <div id="mensajes" width="20" style="max-width:200px" height="22" class="verde_real"></div>
+                  
+                       
+                  
+                   
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td align="center" valign="top">
+                    <a tabindex="0" target="top" class="verde" href="http://oferta.senasofiaplus.edu.co/sofia-oferta/recuperarclave.html">
+                    <img src="//sena.territorio.la/integraciones/../integraciones/josso/get/images/key.png" width="20" height="22">¿Olvidé mi contraseña?</a><br>
+                      <a tabindex="0" target="top" class="verde" href="http://portal.senasofiaplus.edu.co/index.php?option=com_content&amp;task=view&amp;id=239&amp;Itemid=254" title="Si usted NO es funcionario y desea activar su usuario debe comunicarse con el Call Center. 
+            Si usted es un funcionario y desea activar su usuario debe enviar una solicitud a través de correo electrónico al Administrador de Centro o al Administrador del Sistema.">¿Su
+                        usuario está Bloqueado o Inactivo?</a> <br>
+                    <br> <input tabindex="0" type="button" name="ingresar" class="boton_verde" value="Ingresar" onclick="cambioEstadoEnviando();concatenarValores()" id="ingresar">
+                    </td>
+                  </tr>
+                  
+                </tbody></table>
+                
+                
+              </form>
+
+            
+            
+            
+         </div>   
+            <script>
+
+            window.onload = function() {
+                if (window.jQuery) {  
+                    // jQuery is loaded  
+                  
+                } else {
+                    // jQuery is not loaded
+                     var headTag = document.getElementsByTagName('head')[0];
+                      var jqTag = document.createElement('script');
+                      jqTag.type = 'text/javascript';
+                      jqTag.src = '//sena.territorio.la/integraciones//assets/js/jquery.min.js';
+                      
+                      headTag.appendChild(jqTag);
+                    
+                }
+            }
+            </script>
+    </div>
+    </div>
+  </div>
+    
+  <footer style="background-color: #ff8138;">
+    <div class="d-flex justify-content-center align-items-center flex-wrap" style="height: 100%;">
+      <a href="#" title="Logo Territorium">
+        <img alt="Logo Territorium" src="../images/unad/territorium-logo.png">
+      </a>
+      <span>Territorium sena 2019 © Todos los derechos reservados</span>
+      <span>V.1.0.13072</span>
+    </div>
+  </footer>
+
+  <div id="modalLogin" class="modal modalGrupo hide">
+
+    <div class="modal-content">
+      <div class="modal-header" style="border-bottom: 0px;">
+        <span class="close" style="color: #ff8138;opacity: 0.8;text-shadow: none;font-size: 29px;font-weight: 200;" data-dismiss="modal">×</span>
+        <h3 id="tituloModal" style="color: #ff8138 !important;line-height: 30px !important;font-size:22px;font-family: Roboto, sans-serif;font-weight: 400;margin-top: 10px;margin-bottom: 10px;"><span><i style="font-size: 25px;line-height: 22px;margin:auto;" class="fa fa-users" aria-hidden="true"></i></span>&nbsp;Iniciar sesión</h3>
+        <hr style="margin: 7px 8px;border: 0;border-top: 1px solid #ebf0f5 !important;border-bottom: 1px solid #ffffff;">
+      </div>
+
+    </div>
+
+    <div class="modal-body" style="color: #5e6b73;font-size: 14px;">
+
+      <form action="#" method="post" id="formularioLogin">
+      <div class="form-group">
+        <input type="hidden" name="csrfvalue" id="csrfvalue" class="valido" value="$2y$10$QjMhEpDlbHv/J9PwkYL4O.atV9lOdRRVXeHymWDYXoKGadberFyQK">
+  </div>
+        <div class="form-group">
+          <label for="MyUserName">Usuario:</label>
+          <input type="text" name="MyUserName" id="MyUserName" class="loginInput" placeholder="Usuario" style="width: 100% !important;">
+          <span class="error">El campo usuario es requerido</span>
+        </div>
+
+
+        <div class="form-group">
+          <label for="MyPassWord">Contraseña:</label>
+          <input autocomplete="off" type="password" name="MyPassWord" id="MyPassWord" class="loginInput" placeholder="Contraseña" style="width: 100% !important;">
+          <span class="error">El campo contraseña es requerido</span>
+        </div>
+
+        <input type="submit" name="LogIn" id="LogIn" class="login" value="Ingresar" style="margin-bottom: 5px;">
+
+        <div id="containerPreloadLMS">
+          <img alt="Imagen Precarga LMS" style="margin:auto;display: block;width: 43px;height: 11px;margin-top: 50px;" src="/images/ajax-loader.gif">
+        </div>
+
+      </form>
+
+    </div>
+
+  </div>
+
+  <script type="text/javascript" src="../JavaScriptSPA/authConfig.js"></script>
+    <script type="text/javascript" src="../JavaScriptSPA/graphConfig.js"></script>
+    <script type="text/javascript" src="../JavaScriptSPA/ui.js"></script>
+
+    <!-- replace next line with authRedirect.js if you would like to use the redirect flow -->
+    <!-- <script type="text/javascript" src="./authRedirect.js"></script>   -->
+    <script type="text/javascript" src="../JavaScriptSPA/authPopupLogin.js"></script>
+    <script type="text/javascript" src="../JavaScriptSPA/graph.js"></script>
+ 
+
+  <script type="text/javascript">
+
+    var max_fields; //max amount allowed of input
+    var wrapper; //Fields wrapper
+    var x; //initlal text box count
+    var min_fields; //min amount allowed of input
+    var idUni;
+    var pais;
+
+    $(document).ready(function() {
+
+
+      if("idusuario" in localStorage)
+        $("#signOutMicrosoft").show();
+      else
+        $("#signOutMicrosoft").hide();
+      
+      
+      $(document).on("click", ".btn-config", function(){
+
+        if($(".container-config").hasClass("active")) {
+          $(".container-config").removeClass("active");
+          $(".container-config").find("i").removeClass("fa-close").addClass("fa-cog");
+        } else {
+          $(".container-config").addClass("active");
+          $(".container-config").find("i").removeClass("fa-cog").addClass("fa-close");
+        }
+
+      });
+
+      $('#MyUserName, #MyPassWord').on('input', function() {
+        var error=$("span", $(this).parent());
+        error.removeClass("display-error").addClass("error");
+        if($(this).val()){$(this).removeClass("invalido").addClass("valido");}
+        else{$(this).removeClass("valido").addClass("invalido");}
+      });
+
+      $(document).on("click", "#LogIn", function(event){ 
+
+        var data = $("#formularioLogin").serializeArray();
+
+        console.log(data);
+
+        var sendForm=true;
+        for (var input in data) {
+          var elemento=$("#" + data[input]['name']);
+          var valido=elemento.hasClass("valido");
+          var error=$("span", elemento.parent());
+          if (!valido) {
+            error.removeClass("error").addClass("display-error");
+            sendForm=false;
+          } else {
+            error.removeClass("display-error").addClass("error");
+          }
+        }
+        if (!sendForm) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+        else {
+          $.post("index.php?login=true", data);
+          $("#containerPreloadLMS").show();
+        }
+
+      });
+
+      $.ajax({
+          url: "/integraciones/josso/getJossoGatewayHtml",         
+          type : "get",
+          async : true,
+          beforeSend:function(objeto) {
+
+            var html = '<div id="containerPreload"><img alt="Imagen Precarga" style="margin:auto;display: block;height: 11px;width: 43px;" src="/images/ajax-loader.gif"/></div>';
+
+            $("#josso_container").html(html);
+
+          },
+          success: function(data){
+              $("#josso_container").html(data);
+          },
+          error: function (xhr, textStatus, errorThrown) {
+            console.log("Error:", xhr);
+        }
+      });
+
+      idUni = 1256;
+      pais = 'México';
+
+      max_fields = 8;
+      wrapper = $("#camposCodigos");
+      x = 4;
+      min_fields = 4;
+
+      $('#MyUserName').click(function(){
+        $('#alert-error-mssg').hide();
+      });
+      $('#MyPassWord').click(function(){
+        $('#alert-error-mssg').hide();
+      });
+          
+    });
+
+    function modalLogin(){
+      $('#modalLogin').modal();
+      $(".container-config").removeClass("active");
+      $(".container-config").find("i").removeClass("fa-close").addClass("fa-cog");
+      $("#formularioLogin")[0].reset();
+      $('#MyUserName, #MyPassWord').removeClass("valido");
+      $('#MyUserName, #MyPassWord').removeClass("invalido");
+      $("#formularioLogin").find("span").removeClass("display-error").addClass("error");
+    }
+        
+  </script></body></html>
